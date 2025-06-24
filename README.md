@@ -119,3 +119,5 @@ The feedback extension will:
 ## Video
 
 [![Watch the demo video](https://img.youtube.com/vi/herpxOvDtzE/0.jpg)](https://www.youtube.com/watch?v=herpxOvDtzE)
+
+[![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=voiceflow-community_answers-user-feedback&metric=alert_status)](https://sonarcloud.io/summary/new_code?id=voiceflow-community_answers-user-feedback)
