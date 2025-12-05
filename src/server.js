@@ -126,6 +126,12 @@ app.get('/api/transcripts', async (req, res) => {
       return res.status(400).json({ error: 'Project ID is required' })
     }
 
+    // Validate projectID format: expected UUID (change regex if format differs)
+    const projectIDPattern = /^[a-fA-F0-9-]{36}$/;
+    if (!projectIDPattern.test(projectID)) {
+      return res.status(400).json({ error: 'Invalid project ID format' });
+    }
+
     // Validate range parameter
     const validRanges = [
       'Today',
