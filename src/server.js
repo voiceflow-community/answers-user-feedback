@@ -31,6 +31,10 @@ app.post('/api/feedback', async (req, res) => {
     if (!projectID) {
       return res.status(400).json({ error: 'Project ID is required' })
     }
+    // Restrict projectID format to prevent SSRF
+    if (!/^[a-zA-Z0-9_-]+$/.test(projectID)) {
+      return res.status(400).json({ error: 'Invalid Project ID format' })
+    }
 
     // Get transcript ID
     const transcriptsResponse = await fetch(
